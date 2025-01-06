@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassConnect</title>
+   <!-- <link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!--CSS CODES-->
+    <style>
+*{
+  margin: 0;
+  padding: 10px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav{
+  position: fixed;
+  z-index: 99;
+  width: 98%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #000000;
+  border-radius:12px;
+  margin:2px 1%;
+}
+nav .wrapper{
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 30px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .logo a{
+  color: #f2f2f2;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.wrapper .nav-links{
+  display: inline-flex;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+    background-color: #FAD961;
+    color:#000;
+}
+.nav-links .mobile-item{
+  display: none;
+}
+.nav-links .drop-menu{
+  position: absolute;
+  background: #242526;
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  border-radius:0 0 15px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box{
+  transition: all 0.3s ease;
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+.drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius:0 0 15px 15px;
+}
+.mega-box{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  
+}
+.mega-box .content{
+  background: #242526;
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+ border-radius:0 0 15px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mega-box .content .row{
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+.content .row img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius:15px;
+}
+.content .row header{
+  color: #FAD961;
+  font-size: 20px;
+  font-weight: 500;
+}
+.content .row .mega-links{
+  margin-left: -0px;
+  border-left: 1px solid rgba(255,255,255,0.09);
+}
+.row .mega-links li{
+  padding: 0 20px;
+}
+.row .mega-links li a{
+  padding: 0px;
+  padding: 0 20px;
+  color: #d9d9d9;
+  font-size: 17px;
+  display: block;
+}
+.row .mega-links li a:hover{
+    color:#000;
+}
+.wrapper .btn{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.wrapper .btn.close-btn{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+/* Anouncement */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+}
+
+.wrapper-2{
+  width: 780px;
+  margin: 50px auto;
+  margin-top: 100px;
+}
+
+
+.notifications__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 105px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+
+  background-color: rgb(247, 184, 132);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  transition: all .3s ease-in;
+  cursor: pointer;
+}
+
+.notifications__item__avatar {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  margin-right: 20px;
+
+  border-radius: 50%;
+}
+
+.notifications__item__avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.notifications__item__content { width: calc( 100% - 105px ); }
+.notifications__item__title,
+.notifications__item__message { display: block; }
+
+.notifications__item__title {
+  letter-spacing: 2px;
+  font-family: 'atvice', sans-serif;
+  font-size: 19px;
+}
+
+.notifications__item__message {
+  font-family: Roboto, sans-serif;
+  font-size: 17px;
+  color: #4f4646;
+}
+
+.notifications__item__option {
+  width: 20px;
+  height: 20px;
+  margin: 8px 0;
+
+  border-radius: 50%;
+  color: white;
+  opacity: 0;
+
+  font-size: 10px;
+  text-align: center;
+  line-height: 20px;
+
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.notifications__item__option.archive { background-color: #3dc98c; }
+
+.notifications__item__option.delete { background-color: #c93d4d; }
+
+
+/*
+* Animation part
+*/
+.notifications__item:hover {
+  background-color: #f7f7f7;
+  transform: scale( 0.95 );
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.notifications__item:hover .notifications__item__option { opacity: 1; }
+
+.notifications__item.archive .notifications__item__title,
+.notifications__item.delete .notifications__item__title {
+  color: white;
+}
+
+.notifications__item.archive .notifications__item__message,
+.notifications__item.delete .notifications__item__message {
+  color: #f3f3f3;
+}
+
+.notifications__item.archive {
+  background-color: #3dc98c;
+  animation: archiveAnimation 1.5s cubic-bezier(0, 0, 0, 1.12) forwards;
+  animation-delay: .6s;
+}
+
+.notifications__item.delete {
+  background-color: #c93d4d;
+  animation: deleteAnimation 1.5s cubic-bezier(0, 0, 0, 1.12) forwards;
+  animation-delay: .6s;
+}
+
+
+@keyframes archiveAnimation{
+  to {
+    transform: translateX( 100px );
+    opacity: 0;
+  }
+}
+
+@keyframes deleteAnimation{
+  to {
+    transform: translateX( -100px );
+    opacity: 0;
+  }
+}
+.credit a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+}
+
+.credit {
+    text-align: center;
+    font-family: Verdana,Geneva,Tahoma,sans-serif;
+}
+
+/* CSS dark and light mode codes */
+
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn{
+    display: block;
+  }
+  .wrapper .nav-links{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    left: -100%;
+    background: #242526;
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
+  }
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #242526;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3A3B3C;
+  }
+  #menu-btn:checked ~ .nav-links{
+    left: 0%;
+  }
+  #menu-btn:checked ~ .btn.menu-btn{
+    display: none;
+  }
+  #close-btn:checked ~ .btn.menu-btn{
+    display: block;
+  }
+  .nav-links li{
+    margin: 15px 10px;
+  }
+  .nav-links li a{
+    padding: 0 20px;
+    display: block;
+    font-size: 20px;
+  }
+  .nav-links .drop-menu{
+    position: static;
+    opacity: 1;
+    top: 65px;
+    visibility: visible;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    
+  }
+  #showDrop:checked ~ .drop-menu,
+  #showMega:checked ~ .mega-box{
+    max-height: 100%;
+  }
+  .nav-links .desktop-item{
+    display: none;
+  }
+  .nav-links .mobile-item{
+    display: block;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .nav-links .mobile-item:hover{
+    background: #3A3B3C;
+  }
+  .drop-menu li{
+    margin: 0;
+  }
+  .drop-menu li a{
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  .mega-box{
+    position: static;
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .mega-box .content{
+    box-shadow: none;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+  .mega-box .content .row{
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mega-box .content .row:nth-child(1),
+  .mega-box .content .row:nth-child(2){
+    border-top: 0px;
+  }
+  .content .row .mega-links{
+    border-left: 0px;
+    padding-left: 15px;
+  }
+  .row .mega-links li{
+    margin: 0;
+  }
+  .content .row header{
+    font-size: 19px;
+  }
+}
+nav input{
+  display: none;
+}
+  
+
+.body-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+.body-text div{
+  font-size: 45px;
+  font-weight: 600;
+}
+.body-text div a{
+    text-decoration: none;
+    color:#FAD961;
+    background-color: #242526;
+    border-radius: 15px;
+    padding:2px;
+    font-size: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Wrapper Responsiveness */
+@media screen and (max-width: 800px) {
+  .wrapper-2 {
+    width: 95%;
+    margin: 80px auto 20px;
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+  }
+
+  html, body {
+    overflow: auto;
+  }
+}
+
+/* Notification Items Responsiveness */
+
+@media screen and (max-width: 600px) {
+  .notifications__item {
+    height: auto;
+    min-height: 120px;
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+
+  .notifications__item__avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  .notifications__item__content {
+    width: calc(100% - 145px);
+  }
+
+  .notifications__item__title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .notifications__item__message {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Adjust options positioning for mobile */
+  .notifications__item__option {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    margin: 5px;
+  }
+
+  /* Container for options */
+  .notifications__item > div:last-child {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 400px) {
+  .notifications__item {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+
+  .notifications__item__avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .notifications__item__content {
+    width: calc(100% - 70px);
+  }
+
+  .notifications__item__title {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .notifications__item__message {
+    font-size: 13px;
+  }
+}
+
+/* Animation Adjustments for Mobile */
+@media screen and (max-width: 600px) {
+  @keyframes archiveAnimation {
+    to {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes deleteAnimation {
+    to {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+  }
+
+  .notifications__item:hover {
+    transform: scale(0.98);
+  }
+}
+/*Key Key Key responsiveness*/
+@media screen and (max-width: 970px) {
+  .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    left: -100%;
+  }
+  .nav-links li a {
+    padding: 0 20px;
+    font-size: 20px;
+  }
+  .drop-menu, .mega-box {
+    position: static;
+    max-height: 0px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .wrapper-2 {
+    width: 95%;
+    margin: 80px auto 20px;
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .notifications__item {
+    height: auto;
+    min-height: 120px;
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+  .notifications__item__content {
+    width: calc(100% - 145px);
+  }
+  .notifications__item__title {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .notifications__item {
+    padding: 10px;
+  }
+  .notifications__item__avatar {
+    width: 50px;
+    height: 50px;
+  }
+  .notifications__item__title {
+    font-size: 15px;
+  }
+}
+ 
+    </style>
+    <!--CSS CODES-->
+</head>
+
+<body>
+  <nav>
+    <div class="wrapper">
+      <div class="logo"><a href="#">ClassConnect</a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Anouncement.html">Anouncement</a></li>
+        <li>
+          <a href="#" class="desktop-item">Dropdown Menu</a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+          <ul class="drop-menu">
+            <li><a href="Materials.html">Textbooks</a></li>
+            <li><a href="Assignment.html">Assignment</a></li>
+          </ul>
+        </li>
+
+     
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+  <!--Main Page-->
+
+  
+  <div class="wrapper-2">
+
+    <div class="notifications">
+  
+      <div class="notifications__item">
+        <div class="notifications__item__avatar">
+          <img src="/images/exam.jpg" />
+        </div>
+  
+        <div class="notifications__item__content">
+          <span class="notifications__item__title">Exams Preparations</span>
+          <span class="notifications__item__message">Hey, awesome students! It's that time of the year again – exams are just around the corner.Let's make this exam season a success! You've got this! 💪🏼📖
+            Good luck! 🌟✨</span>
+        </div>
+  
+        <div>
+          <div class="notifications__item__option archive js-option">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="notifications__item__option delete js-option">
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+      </div>
+  
+      <div class="notifications__item">
+        <div class="notifications__item__avatar">
+          <img src="/images/fees.png" />
+        </div>
+  
+        <div class="notifications__item__content">
+          <span class="notifications__item__title">Fee Payment Reminder!💸 </span>
+          <span class="notifications__item__message"> 📢
+            Hello, fabulous students, Just a friendly reminder that it's time to complete your fee payments. To avoid any disruptions, please ensure all dues are settled promptly.Thank You.🎓✨</span>
+        </div>
+  
+        <div>
+          <div class="notifications__item__option archive js-option">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="notifications__item__option delete js-option">
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="notifications__item">
+        <div class="notifications__item__avatar">
+          <img src="/images/courses.jpg" />
+        </div>
+  
+        <div class="notifications__item__content">
+          <span class="notifications__item__title">Course Registration🌟🎓</span>
+          <span class="notifications__item__message">
+            Hey everyone! 🚀 . Course registration is will be closing soon, so make sure to secure your spot in your favorite classes! Failure to do so may lead to students not writing final Exams.📢📢</span>
+        </div>
+  
+        <div>
+          <div class="notifications__item__option archive js-option">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="notifications__item__option delete js-option">
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+      </div>
+
+      
+  
+      <div class="notifications__item">
+        <div class="notifications__item__avatar">
+          <img src="/images/web.jpg" />
+        </div>
+  
+        <div class="notifications__item__content">
+          <span class="notifications__item__title">Project Deadline Alert! 📅</span>
+          <span class="notifications__item__message">
+
+            Attention, awesome coders! 🌟 Your web programming projects are due soon, so let's get those lines of code polished and submitted!We can't wait to see what you've built! 💻🌐
+
+            Good luck! 🍀</span>
+        </div>
+  
+        <div>
+          <div class="notifications__item__option archive js-option">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="notifications__item__option delete js-option">
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!--No Footer-->
+<!--Javascript for light and dark screen mode-->
+<!--This function will be called whenever the button is clicked
+        Check the current theme (if it's "dark", change to "light"; if it's "light", change to "dark")--> 
+        <script>
+          const toggleButton = document.getElementById('theme-toggle');
+          toggleButton.addEventListener('click', () => {
+            document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'orange' : 'dark';
+          });
+        </script>
+       <!--This line checks the current theme of the document body. It uses a ternary operator (a shorthand for if-else conditions):-->       
+<!--Javascript for light and dark screen mode-->
+<!--Footer-->
+
+  </body>
+  </html>
